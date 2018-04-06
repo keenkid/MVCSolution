@@ -9,9 +9,9 @@ namespace MVCFirstApp.Controllers
     public class NewHomeController : Controller
     {
         // GET: NewHome
-        public string AnotherChance()
+        public ActionResult AnotherChance()
         {
-            return "Keenkid exception test";
+            return RedirectToAction("getallcustomers", "customer");
         }
     }
 }

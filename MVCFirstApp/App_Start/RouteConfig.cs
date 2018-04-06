@@ -13,11 +13,13 @@ namespace MVCFirstApp
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "NewHome", action = "AnotherChance", id = UrlParameter.Optional }
-            );
+            routes.MapRoute("Process", "Process/{action}/{id}", new { controller = "Process", action = "List", id = UrlParameter.Optional });
+
+            routes.MapRoute("Employee", "Employee/{name}", new { controller = "Employee", action = "search", name = UrlParameter.Optional });
+
+            routes.MapRoute("Customer", "Customer/{action}", new { controller = "Customer", action = "getallcustomers", name = UrlParameter.Optional});
+
+            routes.MapRoute("Default", "{controller}/{action}/{id}", new { controller = "NewHome", action = "AnotherChance", id = UrlParameter.Optional });
         }
     }
 }
